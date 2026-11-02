@@ -1,4 +1,4 @@
-fn reverseString(allocator : std.mem.Allocator, text : [] const u8) ![]const u8 {
+fn reverseString(allocator : std.mem.Allocator, text : [] const u8) ![]u8 {
     const final : [] u8 = try allocator.alloc(u8, text.len);
     for (text, 0..) | _, i | {
         final[i] = text[text.len - 1 - i];
