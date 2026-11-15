@@ -1,0 +1,24 @@
+const std = @import("std");
+
+// Author https://TheonlyOneByC 
+pub fn rot(num: u8, allocator: std.mem.Allocator, t: []const u8) ![]const u8 {
+    const f: []u8 = try allocator.alloc(u8, t.len);
+    for (t, 0..t.len) |_, i| {
+        if (t[i] >= 'A' and t[i] <= 'Z') {
+            f[i] = @as(u8, @intCast(@mod(t[i] - 'A' + (num % 26), 26) + 'A'));
+        } else if (t[i] >= 'a' and t[i] <= 'z') {
+            f[i] = @as(u8, @intCast(@mod(t[i] - 'a' + (num % 26), 26) + 'a'));
+        } else {
+            f[i] = t[i];
+        }
+    }
+    return f;
+}
+
+pub fn main() !void {
+    const allocator = std.heap.page_allocator;
+    const t : [] const u8 = "Hello";
+    const f = try rot(255, allocator, t);
+    std.debug.print("{s}", .{f});
+    defer allocator.free(f);
+}
