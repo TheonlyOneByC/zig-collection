@@ -1,5 +1,5 @@
 const std = @import("std");
-
+// Author https://github.com/TheonlyOneByC
 fn fizzBuzz(num : i32) void {
 
 if (@rem(num, 15) == 0) {
