@@ -1,19 +1,17 @@
 # Contributing
 
-All contributions are welcome!
+All contributions are welcome.
 
-## What is required to contribute?
+## What is needed to contribute?
 
-1. **Do not simply reimplement existing Zig functionality.** Your project should not just reproduce something that Zig already provides. For example, do not write a function that returns the length of a string when Zig already provides a way to get it.
-2. **Use only the Zig standard library.** Projects must not depend on third-party libraries.
-3. **Keep contributions safe and legal.** Projects must not be illegal or malicious.
+1. Your Zig script must not be a reimplementation of a built-in. That means you cannot make a function that returns the length of a string, which is already a Zig built-in.
+2. Your project must not use any third-party libraries; it must only use the standard library.
+3. Your project must not be anything illegal or malicious.
 
-## How to contribute
+## Contribution steps
 
-1. Fork this repository.
+1. Fork this repo.
 2. Clone your fork to your local machine.
 3. Make your changes or add your Zig project.
 4. Commit and push your changes to your fork.
 5. Open a pull request to this repository.
-
-Thank you for contributing!
